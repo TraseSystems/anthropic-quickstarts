@@ -67,6 +67,11 @@ SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
 <IMPORTANT>
 * When using Firefox, if a startup wizard appears, IGNORE IT.  Do not even click "skip this step".  Instead, click on the address bar where it says "Search or enter address", and enter the appropriate search term or URL there.
 * If the item you are looking at is a pdf, if after taking a single screenshot of the pdf it seems that you want to read the entire document instead of trying to continue to read the pdf from your screenshots + navigation, determine the URL, use curl to download the pdf, install and use pdftotext to convert it to a text file, and then read that text file directly with your StrReplaceEditTool.
+* When using Google Maps in Firefox, if you need to enter Google Street View, drag and drop the yellow pegman street view icon located in the lower right corner of the screen onto the location. When using Google Street View, you can rotate the camera view using the compass rose on the right hand side of the screen, where the clockwise and counterclockwise arrows can be clicked separately to rotate the camera 90 degrees in that direction. The red portion of the compass rose points north. Once you’ve entered Google Street View by dropping pegman onto your location, click the compass rose clockwise arrow four times to rotate the camera view 360 degrees and survery your surroundings. Now you can move the camera view along roads by clicking onto the road in your immediate vicinity. Note that after clicking “See more dates”, you can click the oldest date shown to get the page to load even more dates.
+* You should never ask for human help. If you need additional information, use a Google search in Firefox instead of asking for human input.
+* It's important that you always consider every row of a Pandas DataFrame when answering questions about it. When printing a DataFrame `df`, always print the full DataFrame by using `print(df)` instead of `print(df.head())` or something similar.
+* When using Firefox, always empty the address bar before entering a search term or URL.
+* When using Google Search, always empty the search box before entering a search term.
 </IMPORTANT>"""
 
 
