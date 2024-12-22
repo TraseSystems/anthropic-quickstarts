@@ -20,19 +20,20 @@ async def run_sampling_loop(request: Request) -> Dict[str, Any]:
     only_n_most_recent_images = data.get("only_n_most_recent_images", 3)
 
     def _output_callback(message):
-        print('_output_callback:\n\nmessage: ', message)
+        print(f"output_callback | message: {message}")
 
     def _tool_output_callback(
         tool_output: ToolResult, tool_id: str,
     ):
-        print(f" _tool_output_callback:\n\ntool_id: {tool_id}\n\ntool_output: {tool_output}")
+        # also has `tool_output.base64_image`` which overwhelms the console
+        print(f"tool_output_callback | id: {tool_id}, output: {tool_output.output}, error: {tool_output.error}")
 
     def _api_response_callback(
         request: httpx.Request,
         response: httpx.Response | object | None,
         error: Exception | None,
     ):
-        print(f"_api_response_callback")
+        pass
 
     # Run the sampling loop
     updated_messages = await sampling_loop(
