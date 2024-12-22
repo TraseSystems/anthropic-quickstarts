@@ -1,6 +1,7 @@
 set -e
 
-export AWS_PROFILE=default
+echo "Set AWS_PROFILE to your trase account"
+#export AWS_PROFILE=default
 
 docker build . -t computer-use-demo:local
 
